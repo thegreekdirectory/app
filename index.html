@@ -24,16 +24,11 @@
   }
 
   if (inWebApp()) {
-    // Instant redirect in web app
+    // Only redirect when installed as a web app
     window.location.href = target;
-  } else {
-    // Delay in normal browsers
-    setTimeout(() => {
-      window.location.href = target;
-    }, 5000);
   }
 </script>
-<!-- *** END OF UPDATED PART *** -->
+<!-- *** END UPDATED PART *** -->
 
 </head>
 </html>
