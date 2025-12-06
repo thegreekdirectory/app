@@ -1,6 +1,5 @@
 {
   "name": "The Greek Directory",
-  "short_name": "Greek Directory",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
