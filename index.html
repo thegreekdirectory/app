@@ -15,27 +15,10 @@
     <link rel="apple-touch-startup-image" href="https://social.thegreekdirectory.org/c-f-logo.png">
     <link rel="apple-touch-icon" href="https://social.thegreekdirectory.org/c-f-logo.png" type="image/x-icon">
 <script>
-    const target = "https://www.thegreekdirectory.org";
-
-    // Detect iOS version
-    function iOSVersion() {
-      const match = navigator.userAgent.match(/OS (\d+)_/i);
-      return match ? parseInt(match[1]) : null;
-    }
-
-    const ios = iOSVersion();
-
-    // iOS 19+, iOS 26 = normal redirect
-    if (!ios || ios >= 19) {
-      window.location.href = target;
-    } else {
-      // iOS 18 and under = fullscreen iframe
-      window.onload = () => {
-        document.getElementById("frame").src = target;
-        document.getElementById("frame").style.display = "block";
-      };
-    }
-  </script>
+  setTimeout(() => {
+    window.location.href = "https://www.thegreekdirectory.org";
+  }, 5000);
+</script>
 </head>
 
 </html>
