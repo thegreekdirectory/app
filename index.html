@@ -2,7 +2,6 @@
 <html>
 <head>
  <title>The Greek Directory</title>
-
 <link rel="icon" href="https://social.thegreekdirectory.org/c-logo.png" sizes="32x32">
     <link rel="icon" href="https://social.thegreekdirectory.org/c-logo.png" sizes="192x192">
     
@@ -12,9 +11,17 @@
     <link rel="apple-touch-startup-image" href="https://social.thegreekdirectory.org/c-f-logo.png">
     <link rel="apple-touch-icon" href="https://social.thegreekdirectory.org/c-f-logo.png" type="image/x-icon">
 <script>
-  setTimeout(() => {
+  // Check if running as iOS web app (standalone mode) or PWA
+  const isIOSWebApp = window.navigator.standalone === true;
+  const isPWA = window.matchMedia('(display-mode: standalone)').matches;
+  
+  if (isIOSWebApp || isPWA) {
+    // Redirect immediately if in iOS web app or PWA mode
     window.location.href = "https://www.thegreekdirectory.org";
-  }, 5000);
+  }
+  // Otherwise, do nothing (no redirect)
 </script>
 </head>
+<body>
+</body>
 </html>
