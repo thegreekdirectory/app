@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  setTimeout(() => {
+    window.location.href = "https://example.com";
+  }, 5000);
+</script>
+</head>
+</html>
