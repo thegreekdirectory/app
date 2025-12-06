@@ -14,7 +14,19 @@
  <link rel="apple-touch-startup-image" href="https://social.thegreekdirectory.org/c-f-logo.png">
  <link rel="apple-touch-icon" href="https://social.thegreekdirectory.org/c-f-logo.png" type="image/x-icon">
 
-<!-- *** UPDATED REDIRECT SCRIPT ONLY *** -->
+ <style>
+   body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+     padding: 20px;
+     font-size: 18px;
+     line-height: 1.5;
+   }
+   #instructions {
+     display: none;
+   }
+ </style>
+
+<!-- *** UPDATED SCRIPT ONLY *** -->
 <script>
   const target = "https://www.thegreekdirectory.org";
 
@@ -23,12 +35,32 @@
            window.matchMedia("(display-mode: standalone)").matches;
   }
 
-  if (inWebApp()) {
-    // Only redirect when installed as a web app
-    window.location.href = target;
-  }
+  window.onload = () => {
+    if (inWebApp()) {
+      // Instant redirect in web app mode
+      window.location.href = target;
+    } else {
+      // Show instructions only in normal browsers
+      document.getElementById("instructions").style.display = "block";
+    }
+  };
 </script>
-<!-- *** END UPDATED PART *** -->
+<!-- *** END EDITED PART *** -->
 
 </head>
+
+<body>
+  <div id="instructions">
+    <h2>Steps to Install The Greek Directory WebApp:</h2>
+    <ol>
+      <li>Open <b>app.thegreekdirectory.org</b> on your iPhone or iPad.</li>
+      <li>Tap <b>Share</b>.</li>
+      <li>Tap <b>Add to Home Screen</b>.</li>
+      <li>Make sure <b>"Open as Web App"</b> is toggled on.</li>
+      <li>Tap <b>Add</b>.</li>
+    </ol>
+    <p>You're done! Check your Home Screen for The Greek Directory app.</p>
+  </div>
+</body>
+
 </html>
