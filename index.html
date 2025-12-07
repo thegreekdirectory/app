@@ -31,8 +31,8 @@
     return isMobileDevice && !hasMobileUserAgent;
   }
   
-  // Apply desktop class if requesting desktop site
-  if (isRequestingDesktop() || window.innerWidth >= 768) {
+  // Only apply desktop class if "Request Desktop Site" is enabled (not based on screen width)
+  if (isRequestingDesktop()) {
     document.documentElement.classList.add('desktop-view');
   }
 </script>
