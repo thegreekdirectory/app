@@ -20,6 +20,21 @@
     window.location.href = "https://www.thegreekdirectory.org";
   }
   // Otherwise, do nothing (no redirect)
+  
+  // Detect if "Request Desktop Site" is enabled
+  function isRequestingDesktop() {
+    const ua = navigator.userAgent;
+    const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(ua);
+    const hasMobileUserAgent = /Mobile/i.test(ua);
+    
+    // If it's a mobile device but doesn't have "Mobile" in UA, desktop site is requested
+    return isMobileDevice && !hasMobileUserAgent;
+  }
+  
+  // Apply desktop class if requesting desktop site
+  if (isRequestingDesktop() || window.innerWidth >= 768) {
+    document.documentElement.classList.add('desktop-view');
+  }
 </script>
 <style>
   body {
@@ -60,7 +75,7 @@
     }
   }
   
-  /* Desktop: larger text */
+  /* Desktop: larger text (via media query OR class) */
   @media (min-width: 768px) {
     h1 {
       font-size: 1.5rem;
@@ -78,6 +93,24 @@
       font-size: 1rem;
       line-height: 1.5;
     }
+  }
+  
+  /* Apply desktop styles when desktop-view class is present */
+  .desktop-view h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  .desktop-view ol {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  .desktop-view ol li {
+    margin-bottom: 12px;
+  }
+  .desktop-view p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 </style>
 </style>
