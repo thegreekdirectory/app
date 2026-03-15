@@ -32,4 +32,12 @@
     <loc>https://www.thegreekdirectory.org/legal/copyright</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.thegreekdirectory.org/submit-listing</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thegreekdirectory.org/tgd-gr</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
